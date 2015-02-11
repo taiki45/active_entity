@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = ActiveEntity::VERSION
   spec.authors       = ["Taiki ONO"]
   spec.email         = ["taiki-ono@cookpad.com"]
-  spec.summary       = %q{To make an entity with ease.}
+  spec.summary       = %q{To make an entity with ease according to ActiveModel way.}
   spec.description   = spec.summary
   spec.homepage      = ""
   spec.license       = "MIT"

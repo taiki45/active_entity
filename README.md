@@ -1,6 +1,6 @@
 # ActiveEntity
 
-TODO: Write a gem description
+To make an entity with ease according to ActiveModel way.
 
 ## Installation
 
@@ -18,13 +18,29 @@ Or install it yourself as:
 
     $ gem install active_entity
 
-## Usage
+## Synopsis
 
-TODO: Write usage instructions here
+```ruby
+class Message < ActiveEntity
+  attribute :title
+  attribute :body
+
+  validates :title, presence: true, length: { maximum: 255 }
+  validates :body, presence: true
+end
+
+message = Message.new(title: 'A README of ActiveEntity')
+message.valid? #=> false
+message.errors #=> returns a ActiveModel::Errors
+
+message = Message.new(title: 'A README of ActiveEntity', body: 'No contents!')
+message.valid? #=> true
+message.attributes #=> { title: "A README of ActiveEntity", body: "No contents!" }
+```
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/active_entity/fork )
+1. Fork it ( https://github.com/taiki45/active_entity/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
