@@ -1,5 +1,8 @@
 require 'active_model'
+require 'active_support/concern'
+
 require 'active_entity/version'
+require 'active_entity/mutability'
 
 class ActiveEntity
   include ActiveModel::Validations
