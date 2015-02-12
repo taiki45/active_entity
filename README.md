@@ -2,6 +2,8 @@
 
 To make an entity with ease according to ActiveModel way.
 
+[![Build Status](https://travis-ci.org/taiki45/active_entity.svg?branch=master)](https://travis-ci.org/taiki45/active_entity) [![Coverage Status](https://coveralls.io/repos/taiki45/active_entity/badge.svg)](https://coveralls.io/r/taiki45/active_entity) [![Code Climate](https://codeclimate.com/github/taiki45/active_entity/badges/gpa.svg)](https://codeclimate.com/github/taiki45/active_entity)
+
 ## Installation
 
 Add this line to your application's Gemfile:
