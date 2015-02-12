@@ -21,9 +21,13 @@ Or install it yourself as:
 ## Synopsis
 
 ```ruby
-class Message < ActiveEntity
+class Message
+  include ActiveEntity::Entity
+
   attribute :title
   attribute :body
+
+  identity_attribute :title
 
   validates :title, presence: true, length: { maximum: 255 }
   validates :body, presence: true
@@ -36,6 +40,9 @@ message.errors #=> returns a ActiveModel::Errors
 message = Message.new(title: 'A README of ActiveEntity', body: 'No contents!')
 message.valid? #=> true
 message.attributes #=> { title: "A README of ActiveEntity", body: "No contents!" }
+
+another_messsage = Message.new(title: 'A README of ActiveEntity', body: '')
+message == another_messsage #=> true
 ```
 
 ## Contributing
