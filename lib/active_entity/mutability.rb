@@ -1,4 +1,4 @@
-class ActiveEntity
+module ActiveEntity
   module Mutability
     extend ActiveSupport::Concern
 
@@ -6,7 +6,7 @@ class ActiveEntity
       attr_writer(*defined_attributes.keys)
     end
 
-    module ClassMethods
+    class_methods do
       def attribute(name, option = {})
         super
         attr_writer(name)

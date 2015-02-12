@@ -1,12 +1,14 @@
 require 'spec_helper'
 
 RSpec.describe ActiveEntity::Mutability do
-  subject { entity_class.new(x: 1) }
+  subject { test_class.new(x: 1) }
 
   context 'when included after attribute definitions' do
-    before { entity_class.include ActiveEntity::Mutability }
-    let(:entity_class) do
-      Class.new(ActiveEntity) do
+    before { test_class.send(:include, ActiveEntity::Mutability) }
+
+    let(:test_class) do
+      Class.new do
+        include ActiveEntity::Attribute
         attribute :x
       end
     end
@@ -18,8 +20,9 @@ RSpec.describe ActiveEntity::Mutability do
   end
 
   context 'when included before attribute definitions' do
-    let(:entity_class) do
-      Class.new(ActiveEntity) do
+    let(:test_class) do
+      Class.new do
+        include ActiveEntity::Attribute
         include ActiveEntity::Mutability
         attribute :x
       end
