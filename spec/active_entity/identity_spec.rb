@@ -41,4 +41,12 @@ RSpec.describe ActiveEntity::Identity do
       end
     end
   end
+
+  describe '#to_key' do
+    let(:person) { test_class.new('Alice', 1) }
+
+    it 'returns values of key' do
+      expect(person.to_key).to eq(['Alice', 1])
+    end
+  end
 end

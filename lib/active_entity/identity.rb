@@ -3,8 +3,7 @@ module ActiveEntity
     extend ActiveSupport::Concern
 
     included do
-      class_attribute :identity_attributes,
-        instance_writer: false, instance_predicate: false
+      class_attribute :identity_attributes, instance_writer: false, instance_predicate: false
       self.identity_attributes = []
     end
 
@@ -14,17 +13,14 @@ module ActiveEntity
 
         define_method(:==) do |other|
           return false unless self.class === other
-
-          names.all? do |name|
-            public_send(name) == other.public_send(name)
-          end
+          names.all? {|name| public_send(name) == other.public_send(name) }
         end
       end
     end
 
     # For ActiveModel::Conversion
     def to_key
-      indentity_attributes.empty? ? nil : identity_attributes
+      identity_attributes.empty? ? nil : identity_attributes.map {|name| public_send(name) }
     end
   end
 end
