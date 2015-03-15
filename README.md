@@ -23,6 +23,7 @@ Or install it yourself as:
 ## Synopsis
 
 ```ruby
+# = Define model attributes with accessor and define identities =
 class Message
   include ActiveModel::Model
   include ActiveEntity::Accessor
@@ -47,6 +48,40 @@ expect(message.attributes).to eq({ "title" => "A README of ActiveEntity", "body"
 
 another_messsage = Message.new(title: 'A README of ActiveEntity', body: '')
 expect(message).to eq(another_messsage)
+
+
+# = Coercion =
+class Person
+  include ActiveModel::Model
+  include ActiveEntity::Accessor
+  include ActiveEntity::Coercion
+
+  attribute :name, type: String
+  attribute :age, type: Integer
+end
+
+alice = Person.new(name: 'Alice', age: '1')
+expect(alice.name).to eq('Alice')
+expect(alice.age).to eq(1)
+
+
+# = Typecasting =
+class Recipe
+  include ActiveModel::Model
+  include ActiveEntity::Accessor
+  include ActiveEntity::Typecasting
+
+  attribute :title, type: String
+  attribute :steps, type: Integer
+  attribute :likes, type: Integer
+end
+
+waffle = Recipe.new(title: 'Waffle', steps: '12', likes: 'abc')
+expect { waffle.cast! }.to raise_error(ActiveEntity::CastError)
+
+expect(waffle.title).to eq('Waffle')
+expect(waffle.steps).to eq('12')  #=> rollbacks casted value on error
+expect(waffle.likes).to eq('abc')
 ```
 
 ## Contributing
