@@ -1,4 +1,6 @@
 module ActiveEntity
+  # Offers explicit type conversion.
+  # This depends `ActiveEntity::Accessor#defined_attributes`.
   module Typecasting
     # Try to cast attribute values. When fails to cast, raises the error and
     # rollbacks all values.

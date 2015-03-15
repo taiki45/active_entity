@@ -10,7 +10,5 @@ require 'active_entity/typecasting'
 require 'active_entity/coercion'
 require 'active_entity/identity'
 
-# TODO: to_param
-
 require 'active_entity/conversion_definitions'
 require 'active_entity/default_definitions'

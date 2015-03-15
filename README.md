@@ -1,6 +1,8 @@
 # ActiveEntity
 
 An extension for Active Model to encourage implementing entity.
+It's like [Virtus gem](https://github.com/solnic/virtus) but more simple and
+on Active Model way.
 
 [![Build Status](https://travis-ci.org/taiki45/active_entity.svg?branch=master)](https://travis-ci.org/taiki45/active_entity) [![Coverage Status](https://coveralls.io/repos/taiki45/active_entity/badge.svg)](https://coveralls.io/r/taiki45/active_entity) [![Code Climate](https://codeclimate.com/github/taiki45/active_entity/badges/gpa.svg)](https://codeclimate.com/github/taiki45/active_entity) [![Gem Version](https://badge.fury.io/rb/active_entity.svg)](http://badge.fury.io/rb/active_entity)
 
@@ -83,6 +85,13 @@ expect(waffle.title).to eq('Waffle')
 expect(waffle.steps).to eq('12')  #=> rollbacks casted value on error
 expect(waffle.likes).to eq('abc')
 ```
+
+## TODOs
+- `to_param` helper.
+- Default value support.
+- Custom coercion with object.
+- Value object.
+- Docs for typecasting custom procedures.
 
 ## Contributing
 

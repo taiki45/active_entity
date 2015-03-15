@@ -1,3 +1,5 @@
+# Define default type conversion procedures.
+
 ActiveEntity::ConversionDefinitions.set(:Boolean) do |value|
   case value
   when 'true'
