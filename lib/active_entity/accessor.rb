@@ -1,5 +1,5 @@
 module ActiveEntity
-  module Attribute
+  module Accessor
     extend ActiveSupport::Concern
 
     included do

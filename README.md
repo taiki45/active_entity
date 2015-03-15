@@ -25,7 +25,7 @@ Or install it yourself as:
 ```ruby
 class Message
   include ActiveModel::Model
-  include ActiveEntity::Attribute
+  include ActiveEntity::Accessor
   include ActiveEntity::Identity
 
   attribute :title

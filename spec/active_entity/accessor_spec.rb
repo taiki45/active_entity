@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-RSpec.describe ActiveEntity::Attribute do
+RSpec.describe ActiveEntity::Accessor do
   let(:test_class) do
     Class.new do
       include ActiveModel::Model
-      include ActiveEntity::Attribute
+      include ActiveEntity::Accessor
 
       attribute :name
       attribute :age
