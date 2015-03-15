@@ -6,6 +6,7 @@ require 'active_entity/version'
 require 'active_entity/errors'
 require 'active_entity/attribute'
 require 'active_entity/accessor'
+require 'active_entity/typecasting'
 require 'active_entity/identity'
 
 require 'active_entity/conversion_definitions'
