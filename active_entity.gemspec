@@ -6,8 +6,8 @@ require 'active_entity/version'
 Gem::Specification.new do |spec|
   spec.name          = "active_entity"
   spec.version       = ActiveEntity::VERSION
-  spec.authors       = ["Taiki ONO"]
-  spec.email         = ["taiki-ono@cookpad.com"]
+  spec.authors       = ["Taiki Ono"]
+  spec.email         = ["taiks.4559@gmail.com"]
   spec.summary       = %q{To make an entity with ease according to ActiveModel way.}
   spec.description   = spec.summary
   spec.homepage      = ""
