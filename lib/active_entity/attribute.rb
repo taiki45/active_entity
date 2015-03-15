@@ -1,21 +1,19 @@
 module ActiveEntity
-  module Attribute
-    extend ActiveSupport::Concern
+  class Attribute
+    attr_reader :name, :options
 
-    included do
-      class_attribute :defined_attributes, instance_writer: false, instance_predicate: false
-      self.defined_attributes = {}
+    # @param [Symbol] name
+    # @param [Hash{Symbol => Object}] options
+    def initialize(name, options = {})
+      @name, @options = name, options
     end
 
-    class_methods do
-      def attribute(name, options = {})
-        defined_attributes[name] = options
-        attr_accessor(name)
-      end
+    def type
+      @options[:type]
     end
 
-    def attributes
-      Hash[defined_attributes.keys.map {|name| [name.to_s, public_send(name)] }]
+    def description
+      @options[:description]
     end
   end
 end
