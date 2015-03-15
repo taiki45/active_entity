@@ -1,6 +1,6 @@
 # ActiveEntity
 
-To make an entity with ease according to ActiveModel way.
+An extension for Active Model to encourage implementing entity.
 
 [![Build Status](https://travis-ci.org/taiki45/active_entity.svg?branch=master)](https://travis-ci.org/taiki45/active_entity) [![Coverage Status](https://coveralls.io/repos/taiki45/active_entity/badge.svg)](https://coveralls.io/r/taiki45/active_entity) [![Code Climate](https://codeclimate.com/github/taiki45/active_entity/badges/gpa.svg)](https://codeclimate.com/github/taiki45/active_entity) [![Gem Version](https://badge.fury.io/rb/active_entity.svg)](http://badge.fury.io/rb/active_entity)
 
