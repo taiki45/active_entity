@@ -8,7 +8,7 @@ To make an entity with ease according to ActiveModel way.
 
 Add this line to your application's Gemfile:
 
-```ruby
+```
 gem 'active_entity'
 ```
 
@@ -24,7 +24,9 @@ Or install it yourself as:
 
 ```ruby
 class Message
-  include ActiveEntity::Entity
+  include ActiveModel::Model
+  include ActiveEntity::Attribute
+  include ActiveEntity::Identity
 
   attribute :title
   attribute :body
@@ -36,15 +38,15 @@ class Message
 end
 
 message = Message.new(title: 'A README of ActiveEntity')
-message.valid? #=> false
-message.errors #=> returns a ActiveModel::Errors
+expect(message.valid?).to be_falsy
+expect(message.errors).to be_a(ActiveModel::Errors)
 
 message = Message.new(title: 'A README of ActiveEntity', body: 'No contents!')
-message.valid? #=> true
-message.attributes #=> { "title" => "A README of ActiveEntity", "body" => "No contents!" }
+expect(message.valid?).to be_truthy
+expect(message.attributes).to eq({ "title" => "A README of ActiveEntity", "body" => "No contents!" })
 
 another_messsage = Message.new(title: 'A README of ActiveEntity', body: '')
-message == another_messsage #=> true
+expect(message).to eq(another_messsage)
 ```
 
 ## Contributing
