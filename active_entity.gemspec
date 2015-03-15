@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = ActiveEntity::VERSION
   spec.authors       = ["Taiki Ono"]
   spec.email         = ["taiks.4559@gmail.com"]
-  spec.summary       = %q{To make an entity with ease according to ActiveModel way.}
-  spec.description   = spec.summary
-  spec.homepage      = ""
+  spec.summary       = %q{An Active Model extention for entity.}
+  spec.description   = %q{An extension for Active Model to encourage implementing entity.}
+  spec.homepage      = "https://github.com/taiki45/active_entity"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
