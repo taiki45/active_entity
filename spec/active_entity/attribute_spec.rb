@@ -3,6 +3,7 @@ require 'spec_helper'
 RSpec.describe ActiveEntity::Attribute do
   let(:test_class) do
     Class.new do
+      include ActiveModel::Model
       include ActiveEntity::Attribute
 
       attribute :name
