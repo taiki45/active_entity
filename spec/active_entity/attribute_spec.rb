@@ -36,7 +36,7 @@ RSpec.describe ActiveEntity::Attribute do
     it { is_expected.to be_kind_of(Hash) }
 
     it "returns all attribute's name-value pairs" do
-      is_expected.to eq(name: 'Alice', age: 1)
+      is_expected.to eq('name' => 'Alice', 'age' => 1)
     end
   end
 end

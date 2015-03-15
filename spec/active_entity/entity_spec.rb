@@ -27,8 +27,8 @@ RSpec.describe ActiveEntity::Entity do
     message = test_class.new(title: 'A README of ActiveEntity', body: 'No contents!')
     expect(message).to be_valid
     expect(message.attributes).to eq(
-      title: 'A README of ActiveEntity',
-      body: 'No contents!',
+      'title' => 'A README of ActiveEntity',
+      'body' => 'No contents!',
     )
 
     another_messsage = test_class.new(title: 'A README of ActiveEntity', body: '')

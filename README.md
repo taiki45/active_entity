@@ -41,7 +41,7 @@ message.errors #=> returns a ActiveModel::Errors
 
 message = Message.new(title: 'A README of ActiveEntity', body: 'No contents!')
 message.valid? #=> true
-message.attributes #=> { title: "A README of ActiveEntity", body: "No contents!" }
+message.attributes #=> { "title" => "A README of ActiveEntity", "body" => "No contents!" }
 
 another_messsage = Message.new(title: 'A README of ActiveEntity', body: '')
 message == another_messsage #=> true

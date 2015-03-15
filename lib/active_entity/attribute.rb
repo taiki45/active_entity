@@ -25,7 +25,7 @@ module ActiveEntity
 
     def attributes
       @_attributes ||= begin
-        Hash[defined_attributes.keys.map {|name| [name, public_send(name)] }]
+        Hash[defined_attributes.keys.map {|name| [name.to_s, public_send(name)] }]
       end
     end
   end
