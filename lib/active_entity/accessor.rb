@@ -9,7 +9,7 @@ module ActiveEntity
 
     class_methods do
       def attribute(name, options = {})
-        defined_attributes[name] = options
+        defined_attributes[name] = Attribute.new(name, options)
         attr_accessor(name)
       end
     end

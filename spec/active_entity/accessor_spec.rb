@@ -6,8 +6,8 @@ RSpec.describe ActiveEntity::Accessor do
       include ActiveModel::Model
       include ActiveEntity::Accessor
 
-      attribute :name
-      attribute :age
+      attribute :name, type: String
+      attribute :age, type: String
     end
   end
 
@@ -18,7 +18,9 @@ RSpec.describe ActiveEntity::Accessor do
     it { is_expected.to be_kind_of(Hash) }
 
     it 'returns all defined attributes' do
-      is_expected.to eq(name: {}, age: {})
+      expect(subject.keys).to eq(%i(name age))
+      expect(subject[:name]).to be_kind_of(ActiveEntity::Attribute)
+      expect(subject[:age]).to be_kind_of(ActiveEntity::Attribute)
     end
   end
 
