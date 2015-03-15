@@ -20,7 +20,11 @@ module ActiveEntity
 
     # For ActiveModel::Conversion
     def to_key
-      identity_attributes.empty? ? nil : identity_attributes.map {|name| public_send(name) }
+      if respond_to?(:persisted?) && persisted?
+        identity_attributes.empty? ? nil : identity_attributes.map {|name| public_send(name) }
+      else
+        nil
+      end
     end
   end
 end

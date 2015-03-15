@@ -45,8 +45,22 @@ RSpec.describe ActiveEntity::Identity do
   describe '#to_key' do
     let(:person) { test_class.new('Alice', 1) }
 
-    it 'returns values of key' do
-      expect(person.to_key).to eq(['Alice', 1])
+    context 'when persisted?' do
+      before do
+        def person.persisted?
+          true
+        end
+      end
+
+      it 'returns values of key' do
+        expect(person.to_key).to eq(['Alice', 1])
+      end
+    end
+
+    context 'when not persisted?' do
+      it 'returns nil' do
+        expect(person.to_key).to be_nil
+      end
     end
   end
 end
