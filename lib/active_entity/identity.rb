@@ -7,7 +7,7 @@ module ActiveEntity
       self.identity_attributes = []
     end
 
-    class_methods do
+    module ClassMethods
       def identity_attribute(*names)
         identity_attributes.concat(names.flatten)
 
