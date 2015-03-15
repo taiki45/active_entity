@@ -20,7 +20,7 @@ module ActiveEntity
 
     # For ActiveModel::Conversion
     def to_key
-      indentity_attributes.empty? ? nil : identity_attributes
+      identity_attributes.empty? ? nil : identity_attributes.map {|name| public_send(name) }
     end
   end
 end
